@@ -1,0 +1,19 @@
+include:
+  - compose.db.yaml
+
+services:
+  next-app-prod:
+    build:
+      context: ./next-app
+      dockerfile: ../Dockerfile
+      target: runner
+    env_file:
+      - ./.env
+    restart: always
+    ports:
+      - 3000:3000
+    depends_on:
+      db:
+        condition: service_healthy
+        restart: true
+        required: true

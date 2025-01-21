@@ -1,0 +1,11 @@
+include:
+  - compose.db.yaml
+
+services:
+  next-app-dev:
+    extends:
+      file: compose.dev.yaml
+      service: next-app-dev
+    volumes:
+      - ./:/app:cached
+    command: sleep infinity

@@ -1,0 +1,10 @@
+{
+	"name": "nextjs-testproject",
+	"dockerComposeFile": ["../compose.devcontainer.yaml"],
+	"service": "next-app-dev",
+	"image": "vsc-nextjs-testproject/next-app-dev:latest",
+	"shutdownAction": "none",
+	"remoteUser": "node",
+	"workspaceFolder": "/app", 
+	"postStartCommand": "cd next-app/ && yarn install"
+  }
